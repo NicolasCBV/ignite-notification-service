@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  db_mysql:
+    build:
+      context: .
+      dockerfile: mysql.Dockerfile
+    restart: always
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - /docker-entrypoint-initdb.d/
+    networks:
+      - internal_network
+  app:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    restart: always
+    volumes:
+      - .:/usr/app
+      - "/usr/app/node_modules"
+    command: "yarn start:dev"
+    ports: 
+      - "3030:3000"
+    networks:
+      - internal_network
+      - external_network
+    depends_on:
+      - db_mysql
+
+volumes:
+  db:
+    driver: local
+  shadow_db:
+    driver: local
+
+networks:
+  external_network:
+  internal_network:
+    internal: true
