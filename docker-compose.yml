@@ -2,18 +2,23 @@ version: "3"
 
 services:
   db_mysql:
-    build:
-      context: .
-      dockerfile: mysql.Dockerfile
+    image: mysql:latest
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ed43q26843as4d328
+    entrypoint:
+      sh -c "
+        echo 'CREATE DATABASE IF NOT EXISTS notification_service; CREATE DATABASE IF NOT EXISTS shadow_notification_service;' > /docker-entrypoint-initdb.d/init.sql;
+        /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci"
     ports:
       - "3306:3306"
     expose:
       - "3306"
     volumes:
-      - /docker-entrypoint-initdb.d/
+      - db:/docker-entrypoint-initdb.d/
     networks:
       - internal_network
+
   app:
     build:
       context: .
