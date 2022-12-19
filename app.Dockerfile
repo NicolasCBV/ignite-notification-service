@@ -6,7 +6,7 @@ WORKDIR /usr/app
 COPY package*.json /usr/app
 COPY . /usr/app
 
-run yarn install
+run yarn install && yarn build
 
 VOLUME ["/usr/app/node_modules"]
 
