@@ -1,8 +1,8 @@
-### Notification service
-## About
+# Notification service
+### About
 This was one api created on ignite lab event hosted by the educational institute Rocketseat.Furthermore, this app is able to create, update, delete and get the notifications storaged on database using the main principles of clean architeture, using domain drive desing, mappers, factories, in memory database TDD and more.
 
-##Usage
+### Usage
 To use this api is very simple, you could access the url of a service and use the respect endpoint: 
 
 Base url: https://ignite-notification-service.onrender.com/
