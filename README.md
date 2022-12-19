@@ -8,6 +8,7 @@ To use this api is very simple, you could access the url of a service and use th
 Base url: https://ignite-notification-service.onrender.com/
 
 To create new notification: 
+
 	/notifications - method: post    
 	Espected content in json: 
 		content: string  
@@ -15,14 +16,18 @@ To create new notification:
 		recipientId: uuid version 4  
 
 To get one notification:  
+
 	/notifications/from/:recipientId - method: get   
 
 To read or unread one notification:  
+
 	/notifications/:id/read - method: patch   
 	/notifications/:id/unread - method: patch  
 
 To count how many notifications exists:		 
+
 	/notifications/count/from/:recipientId - method: get	
 
 To cancel one notification: 
+
 	/notifications/:id/cancel - method: patch 
