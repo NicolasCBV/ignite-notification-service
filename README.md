@@ -1,6 +1,6 @@
 # Notification service
 ### About
-This was one api created on ignite lab event hosted by the educational institute Rocketseat.Furthermore, this app is able to create, update, delete and get the notifications storaged on database using the main principles of clean architeture, using domain drive desing, mappers, factories, in memory database TDD and more.
+This was one api created on ignite lab event hosted by the educational institute Rocketseat.Furthermore, this app is able to create, update, delete and get the notifications storaged on database using the main principles of clean architeture, using domain drive desing, mappers, factories, in memory database TDD and more. If you wish to copy and test this code in your machine, its totally possible using the pre-defined dockerfile and docker-compose.
 
 ### Usage
 To use this api is very simple, you could access the url of a service and use the respect endpoint: 
