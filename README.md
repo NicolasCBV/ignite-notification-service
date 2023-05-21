@@ -5,8 +5,10 @@ This was one API created on ignite lab event hosted by the educational institute
 ### Usage
 You could use:
 - Enter on /example to use this project on production mode;
-- Type "docker compose up" out of /example dir to use on development mode.
+- Type "yarn up" inside the /notification-service dir to use on development mode.
 - Use the docker image nicolascbv/ignite-notification-app:latest
+
+Recomendations: use yarn
 
 To check the documentation, see this link:
 https://www.postman.com/docking-module-astronomer-45427822/workspace/ignite-notification-doc/collection/25622444-2158a2fc-114a-4686-ae7c-ac0b8985159d?action=share&creator=25622444
