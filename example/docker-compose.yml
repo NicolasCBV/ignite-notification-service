@@ -3,7 +3,7 @@ version: "3"
 services:
   mysql_db:
     build:
-      context: ./mysql
+      context: ../mysql
       dockerfile: Dockerfile
     hostname: mysql_db
     restart: always
@@ -11,17 +11,18 @@ services:
       - "3306:3306"
     expose:
       - "3306"
+    volumes:
+      - db:/docker-entrypoint-initdb.d/
     networks:
       - internal_network
 
   app:
-    build:
-      context: ./notification-service
-      dockerfile: app.Dockerfile
+    image: nicolascbv/ignite-notification-app:latest 
+    environment:
+      - 'DATABASE_URL=mysql://root:password@mysql_db/db'
+      - 'SHADOW_DATABASE_URL=mysql://root:password@mysql_db/shadow_db'
     hostname: app
     restart: always
-    volumes:
-      - ./notification-service:/usr/app
     ports: 
       - "3030:3030"
     networks:

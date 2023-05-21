@@ -18,4 +18,5 @@ model Notification {
   createdAt   DateTime  @default(now())
 
   @@index([recipientId])
+  @@map("notifications")
 }

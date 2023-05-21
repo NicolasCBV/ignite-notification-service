@@ -8,10 +8,11 @@ import { CountRecipientNotification } from '@app/services/countRecipientNotifica
 import { GetRecipientNotification } from '@app/services/getRecipientNotifications';
 import { ReadNotification } from '@app/services/readNotification';
 import { UnreadNotification } from '@app/services/unreadNotification';
+import { LifeController } from './controllers/life.controller';
 
 @Module({
   imports: [DatabaseModule],
-  controllers: [NotificationsController],
+  controllers: [NotificationsController, LifeController],
   providers: [
     CreateNotificationBody,
     SendNotification,

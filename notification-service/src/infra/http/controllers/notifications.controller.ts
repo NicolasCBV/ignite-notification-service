@@ -19,11 +19,6 @@ export class NotificationsController {
     private getRecipientNotification: GetRecipientNotification,
   ) {}
 
-  @Get('/healthz')
-  async sealth() {
-    return { test: 'hello world' };
-  }
-
   @Patch(':id/cancel')
   async cancel(@Param('id') id: string) {
     await this.cancelNotification.exec({
