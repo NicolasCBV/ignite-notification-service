@@ -10,7 +10,4 @@ You could use:
 
 Recomendations: use yarn
 
-To check the documentation, see this link:
-https://www.postman.com/docking-module-astronomer-45427822/workspace/ignite-notification-doc/collection/25622444-2158a2fc-114a-4686-ae7c-ac0b8985159d?action=share&creator=25622444
-
-Don't forget to check the .env.example to see what you need to set before use this project
+To check the documentation, see this [link](https://documenter.getpostman.com/view/25622444/2s9YRFT9VC). Don't forget to check the .env.example to see what you need to set before use this project
